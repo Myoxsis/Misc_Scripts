@@ -20,7 +20,7 @@ for (const cont of conts) {
 			act2 = chg.querySelector('.activity-new-val').childNodes[0].textContent.trim();
 			if (act != 'Status'){
 			} else{
-			var txt = act2 + " - " + dt + " - " + usr;
+			var txt = act2 + " - " + dt; // + " - " + usr
 			text += txt + "\n"
 			}
 		} catch (e){}
