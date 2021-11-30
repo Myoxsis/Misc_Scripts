@@ -4,6 +4,7 @@ var conts = document.querySelectorAll('.actionContainer');
 
 for (const cont of conts) {
 	dtl = cont.querySelector('.action-details');
+	usr = dtl.querySelector('.user-hover').innerText.trim();
 	dt = dtl.querySelector('.date').getAttribute('title');
 	//console.log(cont);
 	//console.log(dt);
@@ -19,7 +20,7 @@ for (const cont of conts) {
 			act2 = chg.querySelector('.activity-new-val').childNodes[0].textContent.trim();
 			if (act != 'Status'){
 			} else{
-			var txt = act2 + " - " + dt;
+			var txt = act2 + " - " + dt + " - " + usr;
 			text += txt + "\n"
 			}
 		} catch (e){}
