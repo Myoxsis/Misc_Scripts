@@ -26,4 +26,13 @@ for (const cont of conts) {
 		} catch (e){}
 	}
 }
+
+var last_cont = conts[conts.length - 1];
+dtl = last_cont.querySelector('.action-details');
+usr = dtl.querySelector('.user-hover').innerText.trim();
+dt = dtl.querySelector('.date').getAttribute('title');
+
+var txt = "Created" + " - " + dt; // + " - " + usr
+text += txt + "\n"
+
 console.log(text);
