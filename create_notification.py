@@ -1,14 +1,21 @@
 import platform, os
 from win10toast import ToastNotifier
 
-if platform.system() = 'Windows':
-  toaster = ToastNotifier()
-  toaster.show_toast("Jira Gatherer", "All Jira Tickets have been check")
+def push(title, message):
+	plt = platform.system()
 
-elif platform.system() = "Mac":
-  title = "Success"
-  message = "File downloaded"
-  command = f'''
-  osascript -e 'display notification "{message}" with title "{title}"'
-  '''
-  os.system(command)
+	if plt=='Darwin':
+		command = f'''
+		osascript -e 'display notification "{message}" with title "{title}"'
+		'''
+	if plt=='Linux':
+		command = f'''
+		notify-send "{title}" "{message}"
+		'''
+  if plt=='Windows':
+    toaster = ToastNotifier()
+    toaster.show_toast(title, message)
+	else:
+		return
+
+	os.system(command)
