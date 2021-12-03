@@ -12,10 +12,12 @@ def push(title, message):
 		command = f'''
 		notify-send "{title}" "{message}"
 		'''
-  if plt=='Windows':
-    toaster = ToastNotifier()
-    toaster.show_toast(title, message)
+	if plt=='Windows':
+		toaster = ToastNotifier()
+		toaster.show_toast(title, message)
 	else:
 		return
 
 	os.system(command)
+
+push("Jira Gatherer", "All tickets cleared")
