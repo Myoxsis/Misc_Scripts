@@ -47,12 +47,16 @@ for (const cont of conts) {
     text += txt + ";";
 }
 
-chauff = document.querySelector(".Pricestyled__LeftColumn-sc-r5ze64-2").textContent;
-var txt = '"' + chauff + '"';
-text += txt + ";";
+try{
+    chauff = document.querySelector(".Pricestyled__LeftColumn-sc-r5ze64-2").textContent;
+    var txt = '"' + chauff + '"';
+    text += txt + ";";
+} catch (e) {}
 
-chauff = document.querySelector(".Pricestyled__RightColumn-sc-r5ze64-3").textContent;
-var txt = '"' + chauff + '"';
-text += txt + ";";
+try{
+    chauff = document.querySelector(".Pricestyled__RightColumn-sc-r5ze64-3").textContent;
+    var txt = '"' + chauff + '"';
+    text += txt + ";";
+} catch (e) {}
 
 console.log(text);
