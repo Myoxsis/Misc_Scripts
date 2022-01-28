@@ -4,12 +4,6 @@ title = document.querySelector(".Summarystyled__Title-sc-1u9xobv-3").textContent
 var txt = '"' + title + '"';
 text += txt + ";";
 
-//subdescription = document.querySelectorAll(".Summarystyled__TagsWrapper-sc-1u9xobv-13 div");
-//for (const cont of subdescription) {
-//    var txt = '"' + cont.textContent + '"';
-//    text += txt + ";";
-//}
-
 subdescription = document.querySelectorAll(".Summarystyled__TagsWrapper-sc-1u9xobv-13 div");
 piece = "";
 chambre = "";
@@ -35,13 +29,6 @@ for (const cont of subdescription) {
     }
 }
 
-console.log("Piece : " + piece);
-console.log("chambre : " + chambre);
-console.log("surface : " + surface);
-console.log("etage : " + etage);
-console.log("terrain : " + terrain);
-
-
 nb_photos = document.querySelector(".Tabsstyled__Label-sc-18f5wnt-2").textContent;
 var txt = '"' + nb_photos + '"';
 text += txt + ";";
@@ -59,10 +46,18 @@ var txt = '"' + desc + '"';
 text += txt + ";";
 
 conts = document.querySelectorAll(".BasicFeaturesstyled__Feature-sc-ngbzhd-1");
+dt_construction = "";
+dt_dispo = "";
+prevoir_travaux = "";
+refait_neuf = "";
+
 for (const cont of conts) {
-    var txt = '"' + cont.textContent + '"';
-    text += txt + ";";
+    if(cont.textContent.includes("Construit")){dt_construction = cont.textContent;}
+    if(cont.textContent.includes("Dispo")){dt_dispo = cont.textContent;}
+    if(cont.textContent.includes("Travaux à prévoir")){prevoir_travaux = cont.textContent;}
+    if(cont.textContent.includes("Refait à neuf")){refait_neuf = cont.textContent;}
 }
+
 
 conts = document.querySelectorAll(".GeneralFeaturesstyled__TextWrapper-sc-1ia09m5-3");
 ascenseur = "";
@@ -90,6 +85,7 @@ cheminee = "";
 piscine = "";
 alarme = "";
 parquet = "";
+sans_vav = "";
 
 for (const cont of conts) {
     if(cont.textContent.includes("Ascenseur")){ascenseur = cont.textContent;}
@@ -122,43 +118,15 @@ for (const cont of conts) {
     if(cont.textContent.includes("Piscine")){piscine = cont.textContent;}
     if(cont.textContent.includes("Alarme")){alarme = cont.textContent;}
     if(cont.textContent.includes("Parquet")){parquet = cont.textContent;}
+    if(cont.textContent.includes("Sans vis-à-vis")){sans_vav = cont.textContent;}
     else {
         console.log("[ALERT] Value not recognized : " + cont.textContent);
     }
 
 }
 
-console.log(ascenseur);
-console.log(terrasse);
-console.log(calme);
-console.log(belle_vue);
-console.log(parking);
-console.log(cuisine);
-console.log(sdb);
-console.log(sde);
-console.log(toilettes);
-console.log(toilettes_sep);
-console.log(sej_sal);
-console.log(cave);
-console.log(gardien);
-console.log(digicode);
-console.log(interphone);
-console.log(entree_sep);
-console.log(expo);
-console.log(balcon);
-console.log(handic);
-console.log(box);
-console.log(plc_rg);
-console.log(cheminee);
-console.log(piscine);
-console.log(alarme);
-console.log(parquet);
+typ_chauff = document.querySelector(".Diagnosticsstyled__TextWrapper-sc-kxy40a-9").textContent;
 
-
-
-chauff = document.querySelector(".Diagnosticsstyled__TextWrapper-sc-kxy40a-9").textContent;
-var txt = '"' + chauff + '"';
-text += txt + ";";
 
 conts = document.querySelectorAll(".Preview__PreviewBar-sc-9hhhpm-0");
 for (const cont of conts) {
@@ -182,19 +150,12 @@ try{
     text += txt + ";";
 } catch (e) {}
 
-
-//var offer = new Object();
-//offer.name = title;
-//offer.nb_photos  = nb_photos;
-//offer.location_est = location_est;
-//offer.price = price;
-//offer.subdescription = subdescription;
-//offer.desc = desc;
-//offer.chauff = chauff;
-//var jsonString= JSON.stringify(offer);
-
-//console.log(jsonString);
-
 var txt = '"' + title + '";' + '"' + piece + '";' + '"' + chambre + '";' + '"' + surface + '";' + '"' + terrain + '";' + '"' + etage +
- '";' + '"' + nb_photos + '";';
+ '";' + '"' + nb_photos + '";' + '"' + price + '";' + '"' + location_est + '";' + '"' + desc + '";' + '"' + dt_construction + '";' +
+  '"' + dt_dispo + '";' + '"' + balcon + '";' + '"' + ascenseur + '";' + '"' + terrasse + '";' + '"' + parking + '";' + '"' + cave +
+   '";' + '"' + calme + '";' + '"' + expo + '";' + '"' + sdb + '";' + '"' + sde + '";' + '"' + cuisine + '";' + '"' +
+    belle_vue + '";' + '"' + sans_vav + '";' + '"' + prevoir_travaux + '";' + '"' + refait_neuf + '";' + '"' + interphone + '";' + 
+'"' + toilettes + '";' + '"' + toilettes_sep + '";' + '"' + gardien + '";' + '"' + digicode + '";' + '"' + sej_sal + '";' + 
+'"' + typ_chauff + '";' + '"' + entree_sep + '";' + '"' + handic + '";' + '"' + cheminee + '";' + '"' + plc_rg + '";' +
+ '"' + parquet + '";';
 console.log(txt);
