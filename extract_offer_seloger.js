@@ -74,27 +74,54 @@ cuisine = "";
 sdb = "";
 sde = "";
 toilettes = "";
+toilettes_sep = "";
+sej_sal = "";
 cave = "";
 gardien = "";
 digicode = "";
 interphone = "";
+entree_sep = "";
+expo = "";
+balcon = "";
+handic = "";
+box = "";
+plc_rg = "";
+cheminee = "";
+piscine = "";
+alarme = "";
+parquet = "";
 
 for (const cont of conts) {
-    if(cont.textContent == "Ascenseur"){ascenseur = cont.textContent;}
-    if(cont.textContent == "Terrasse"){terrasse = cont.textContent;}
-    if(cont.textContent == "Calme"){calme = cont.textContent;}
-    if(cont.textContent == "Belle vue"){belle_vue = cont.textContent;}
-    if(cont.textContent == "Parking"){parking = cont.textContent;}
-    if(cont.textContent == "Cuisine américaine"){cuisine = cont.textContent;}
-    if(cont.textContent == "Salle de bain (baignoire)"){sdb = cont.textContent;}
-    if(cont.textContent == "Salle d'eau (douche)"){sde = cont.textContent;}
-    if(cont.textContent.endsWith("ilettes")){toilettes = cont.textContent;}
-    if(cont.textContent == "Séjour / salon"){sej_sal = cont.textContent;}
-    if(cont.textContent == "Cave"){cave = cont.textContent;}
-    if(cont.textContent == "Gardien"){gardien = cont.textContent;}
-    if(cont.textContent == "Digicode"){digicode = cont.textContent;}
-    if(cont.textContent == "Interphone"){interphone = cont.textContent;}
-    if(cont.textContent == "Calme"){calme = cont.textContent;}
+    if(cont.textContent.includes("Ascenseur")){ascenseur = cont.textContent;}
+    if(cont.textContent.includes("Balcon")){balcon = cont.textContent;}
+    if(cont.textContent.includes("Exposition")){expo = cont.textContent;}
+    if(cont.textContent.includes("Pas d'ascenseur")){ascenseur = cont.textContent;}
+    if(cont.textContent.includes("Terrasse")){terrasse = cont.textContent;}
+    if(cont.textContent.includes("Calme")){calme = cont.textContent;}
+    if(cont.textContent.includes("Belle vue")){belle_vue = cont.textContent;}
+    if(cont.textContent.includes("Parking")){parking = cont.textContent;}
+    if(cont.textContent.includes("Cuisine américaine")){cuisine = cont.textContent;}
+    if(cont.textContent.includes("Cuisine séparée")){cuisine = cont.textContent;}
+    if(cont.textContent.includes("Cuisine équipée")){cuisine = cont.textContent;}
+    if(cont.textContent.includes("Aucune cuisine")){cuisine = cont.textContent;}
+    if(cont.textContent.includes("Coin cuisine")){cuisine = cont.textContent;}
+    if(cont.textContent.includes(" de bain (baignoire)")){sdb = cont.textContent;}
+    if(cont.textContent.includes(" d'eau (douche)")){sde = cont.textContent;}
+    if(cont.textContent.includes("ilettes")){toilettes = cont.textContent;}
+    if(cont.textContent.includes("ilettes séparée")){toilettes_sep = cont.textContent;}
+    if(cont.textContent.includes("Séjour / salon")){sej_sal = cont.textContent;}
+    if(cont.textContent.includes("Cave")){cave = cont.textContent;}
+    if(cont.textContent.includes("Gardien")){gardien = cont.textContent;}
+    if(cont.textContent.includes("Digicode")){digicode = cont.textContent;}
+    if(cont.textContent.includes("Interphone")){interphone = cont.textContent;}
+    if(cont.textContent.includes("Entrée séparée")){entree_sep = cont.textContent;}
+    if(cont.textContent.includes("Accès handicapé")){handic = cont.textContent;}
+    if(cont.textContent.toLowerCase().includes("box")){box = cont.textContent;}
+    if(cont.textContent.includes("Placards / rangements")){plc_rg = cont.textContent;}
+    if(cont.textContent.includes("Cheminée")){cheminee = cont.textContent;}
+    if(cont.textContent.includes("Piscine")){piscine = cont.textContent;}
+    if(cont.textContent.includes("Alarme")){alarme = cont.textContent;}
+    if(cont.textContent.includes("Parquet")){parquet = cont.textContent;}
     else {
         console.log("[ALERT] Value not recognized : " + cont.textContent);
     }
@@ -110,7 +137,22 @@ console.log(cuisine);
 console.log(sdb);
 console.log(sde);
 console.log(toilettes);
+console.log(toilettes_sep);
 console.log(sej_sal);
+console.log(cave);
+console.log(gardien);
+console.log(digicode);
+console.log(interphone);
+console.log(entree_sep);
+console.log(expo);
+console.log(balcon);
+console.log(handic);
+console.log(box);
+console.log(plc_rg);
+console.log(cheminee);
+console.log(piscine);
+console.log(alarme);
+console.log(parquet);
 
 
 
@@ -141,15 +183,18 @@ try{
 } catch (e) {}
 
 
-var offer = new Object();
-offer.name = title;
-offer.nb_photos  = nb_photos;
-offer.location_est = location_est;
-offer.price = price;
-offer.subdescription = subdescription;
-offer.desc = desc;
-offer.chauff = chauff;
-var jsonString= JSON.stringify(offer);
+//var offer = new Object();
+//offer.name = title;
+//offer.nb_photos  = nb_photos;
+//offer.location_est = location_est;
+//offer.price = price;
+//offer.subdescription = subdescription;
+//offer.desc = desc;
+//offer.chauff = chauff;
+//var jsonString= JSON.stringify(offer);
 
+//console.log(jsonString);
 
-console.log(jsonString);
+var txt = '"' + title + '";' + '"' + piece + '";' + '"' + chambre + '";' + '"' + surface + '";' + '"' + terrain + '";' + '"' + etage +
+ '";' + '"' + nb_photos + '";';
+console.log(txt);
