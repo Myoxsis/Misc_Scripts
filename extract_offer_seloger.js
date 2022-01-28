@@ -124,33 +124,31 @@ for (const cont of conts) {
     else {
         console.log("[ALERT] Value not recognized : " + cont.textContent);
     }
-
 }
 
 typ_chauff = document.querySelector(".Diagnosticsstyled__TextWrapper-sc-kxy40a-9").textContent;
 
 
-conts = document.querySelectorAll(".Preview__PreviewBar-sc-9hhhpm-0");
+conts = document.querySelectorAll(".Diagnosticsstyled__PreviewContainer-sc-kxy40a-1");
+dpe = "";
+ges = "";
+
 for (const cont of conts) {
-    if (cont.length == 1){
-        console.log(cont.length + " X ");
-    }
-    //console.log(cont.length);//textContent);
-    //var txt = '"' + cont.textContent + '"';
-    //text += txt + ";";
+    if(cont.textContent.includes("Diagnostic de performance énergétique (DPE)")){dpe = cont.textContent;}
+    if(cont.textContent.includes("Indice d'émission de gaz à effet de serre (GES)")){sam = cont.textContent;}
 }
 
+l_col = "";
 try{
-    chauff = document.querySelector(".Pricestyled__LeftColumn-sc-r5ze64-2").textContent;
-    var txt = '"' + chauff + '"';
-    text += txt + ";";
+    l_col = document.querySelector(".Pricestyled__LeftColumn-sc-r5ze64-2").textContent;
 } catch (e) {}
 
+r_col = "";
 try{
-    chauff = document.querySelector(".Pricestyled__RightColumn-sc-r5ze64-3").textContent;
-    var txt = '"' + chauff + '"';
-    text += txt + ";";
+    r_col = document.querySelector(".Pricestyled__RightColumn-sc-r5ze64-3").textContent;
 } catch (e) {}
+
+
 
 var txt = '"' + title + '";' + '"' + piece + '";' + '"' + chambre + '";' + '"' + surface + '";' + '"' + terrain + '";' + '"' + etage +
  '";' + '"' + nb_photos + '";' + '"' + price + '";' + '"' + location_est + '";' + '"' + desc + '";' + '"' + dt_construction + '";' +
@@ -159,5 +157,7 @@ var txt = '"' + title + '";' + '"' + piece + '";' + '"' + chambre + '";' + '"' +
     belle_vue + '";' + '"' + sans_vav + '";' + '"' + prevoir_travaux + '";' + '"' + refait_neuf + '";' + '"' + interphone + '";' + 
 '"' + toilettes + '";' + '"' + toilettes_sep + '";' + '"' + gardien + '";' + '"' + digicode + '";' + '"' + sej_sal + '";' + 
 '"' + typ_chauff + '";' + '"' + entree_sep + '";' + '"' + handic + '";' + '"' + cheminee + '";' + '"' + plc_rg + '";' +
- '"' + parquet + '";' + '"' + sam + '";' + '"' + piscine + '";' + '"' + alarme + '";';
+ '"' + parquet + '";' + '"' + sam + '";' + '"' + piscine + '";' + '"' + alarme + '";' + '"' + dpe + '";' + '"' + ges +
+  '";' + '"' + l_col + '";' + '"' + r_col + '";';
+
 console.log(txt);
