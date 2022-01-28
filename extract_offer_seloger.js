@@ -86,6 +86,7 @@ piscine = "";
 alarme = "";
 parquet = "";
 sans_vav = "";
+sam = "";
 
 for (const cont of conts) {
     if(cont.textContent.includes("Ascenseur")){ascenseur = cont.textContent;}
@@ -119,6 +120,7 @@ for (const cont of conts) {
     if(cont.textContent.includes("Alarme")){alarme = cont.textContent;}
     if(cont.textContent.includes("Parquet")){parquet = cont.textContent;}
     if(cont.textContent.includes("Sans vis-à-vis")){sans_vav = cont.textContent;}
+    if(cont.textContent.includes("Salle à manger")){sam = cont.textContent;}
     else {
         console.log("[ALERT] Value not recognized : " + cont.textContent);
     }
@@ -157,5 +159,5 @@ var txt = '"' + title + '";' + '"' + piece + '";' + '"' + chambre + '";' + '"' +
     belle_vue + '";' + '"' + sans_vav + '";' + '"' + prevoir_travaux + '";' + '"' + refait_neuf + '";' + '"' + interphone + '";' + 
 '"' + toilettes + '";' + '"' + toilettes_sep + '";' + '"' + gardien + '";' + '"' + digicode + '";' + '"' + sej_sal + '";' + 
 '"' + typ_chauff + '";' + '"' + entree_sep + '";' + '"' + handic + '";' + '"' + cheminee + '";' + '"' + plc_rg + '";' +
- '"' + parquet + '";';
+ '"' + parquet + '";' + '"' + sam + '";' + '"' + piscine + '";' + '"' + alarme + '";';
 console.log(txt);
